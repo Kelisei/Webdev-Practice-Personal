@@ -1,0 +1,77 @@
+/*Estilo para usar en el header*/ 
+* {
+    font-family: cascadia mono, Arial, Helvetica,sans-serif;
+}
+body {
+    background-color: wheat;
+}
+.nav_responsive-container {
+    display: none; /*La desaparecemos por ahora, ya que en la version de "escritorio no se tiene que ver*/
+}
+.nav_container {
+/*Asignamos el color de la cabezera, y le damos un poco de espacio para respirar a los elementos con el padding*/
+    background: #222; 
+    padding-bottom: 7px;
+}
+.nav_list-element a, i {
+    /*Asignamos el color del texto, el tamño de la fuente, y la separacion entre los elementos*/
+    color: gold;
+    text-decoration: none;
+    font-size: 40px;
+    padding: 5px;
+    text-shadow: 2px 2px 2px black;
+}
+.nav_list-element {
+    /*Hacemos que los elementos esten uno junto al otro.*/
+    display: inline-block;
+}
+.nav_list-element a:hover {
+    color: white; /*Le damos colorcito para cuando le pasamos el mouse arriba*/
+}
+/*Cuando la pantalla alcanza 580px de ancho, este cambiara a otro estilo:*/
+@media only screen and (max-width: 580px) {
+    /*Desactivamos el nav para escritorios*/
+    .nav_container {
+        display: none;
+    }
+    /*embellecemos los elementos*/
+    .nav_responsive-list-element a, i {
+        color: gold;
+        text-decoration: none;
+        font-size: 25px;
+        padding: 5px;
+        text-shadow: 2px 2px 2px black;
+    }
+    .nav_responsive-list-element:hover a {
+        color: white
+    }
+    /*Activamos el de "celular"*/
+    .nav_responsive-container {
+        display: inline-block;
+        width: 100%;
+    }
+    .nav_responsive-button i{
+        font-size: 35px;
+    }
+    .nav_responsive-button-container:hover > .nav_responsive-button i  {
+        color: white;
+    }
+    .nav_responsive-button-container    {
+        position: relative;
+        background-color: #222;
+        z-index: 10;
+    }
+    /*Hacemos que las opciones no esten visibles si no se hoverea sobre el boton*/
+    .nav_responsive-list {
+        background-color: #444;
+        position: relative;
+        top: -400px;
+        transition: 0.6s;
+        z-index: 1;
+    }
+    /*Cuando hoverea sobre el boton manda estas cosas a su posicion!*/
+    .nav_responsive-container:hover > .nav_responsive-list {
+        top: 0;
+    }
+
+}
